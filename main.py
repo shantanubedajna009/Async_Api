@@ -4,6 +4,8 @@ from core.conf import settings
 
 from db.session import engine 
 from db.base_class import Base 
+from db.models.users import User
+from db.models.jobs import Job
 
 
 
