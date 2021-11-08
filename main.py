@@ -1,12 +1,11 @@
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from core.conf import settings
-
 from db.session import engine 
 from db.base_class import Base 
 from db.models.users import User
 from db.models.jobs import Job
-
+from api.base import main_router
 
 
 def create_tables(): 
@@ -17,7 +16,11 @@ def create_tables():
 def start_application():
 	app = FastAPI(title=settings.PROJECT_TITLE,version=settings.PROJECT_VERSION)
 
-	create_tables()      
+	create_tables() # if not exists
+	
+	#create the routes
+	app.include_router(main_router)
+
 	return app
 
 app = start_application()

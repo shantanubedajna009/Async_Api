@@ -4,7 +4,7 @@ from typing import Optional
 from passlib.utils.decor import deprecated_method
 
 
-pwd_context = CryptContext(context=['bcrypt'],deprecated_method="auto")
+pwd_context = CryptContext(schemes=['bcrypt'], deprecated="auto")
 
 class Hasher(object):
 

@@ -5,7 +5,6 @@ from core.conf import settings
 
 
 
-
 SQLALCHEMY_DATABASE_URL = settings.DB_URL
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
